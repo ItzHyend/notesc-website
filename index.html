@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotEsc</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="favicon/png" href="assets/images/logo2.png">
+</head>
+
+<body>
+    <header style="position: fixed;">
+        <div class="logo">Rishhi Duetheesh</div>
+        <div class="hamburgar">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a href="" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="homepage">
+
+        <h2>Greetings!!,<br>
+            I Am Rishhi,<br>
+            a Web & Game Developer..
+        </h2>
+
+    </div>
+
+    <div class="git-icon">
+
+        <a href="https://github.com/onegunplay" target="_blank" style="padding-left: 50px;">
+            <img src="assets/images/github.png" width="50px" alt="github">
+        </a>
+
+    </div>
+
+    <section>
+
+        <a href="https://www.youtube.com/@itzhyend" target="_blank" style="padding: 130px;">
+            <img src="assets/images/youtube.png" style="position: relative; top: 392px;" width="50px" alt="youtube">
+        </a>
+
+    </section>
+
+    <section>
+
+        <div class="abt" id="about">
+            <h1>Abouts</h1>
+        </div>
+
+        <div class="abt-list">
+            <p>I'm Rishhi Duetheesh. I am 18 Years Old. I am a Web, Game & Software Developer <br> I Have Done My Web Development
+                In Arena Multimedia.
+                I'm From India, TamilNadu. |<br> Im Interested In Programming & Gaming & Volleyball. I Have a YouTube
+                Channel <br>
+                For Gaming Which is "ItzHyend". I Have Learnt Video Editing In AVM Stuido. <br>
+                My Hobbies Are Playing, Outing, Learn Something New In Programes, And Have Fun..</p>
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="skils" id="skills">
+            <h1>Skills</h1>
+        </div>
+
+        <div class="skils-list">
+            <p>A skill is the learned ability to act with determined results with good execution <br> often within a
+                given
+                amount
+                of time, energy, or both. <br> Skills can often be divided into domain-general and domain-specific
+                skills.
+            </p>
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="proj">
+            <h1>Projects</h1>
+        </div>
+
+        <div class="proj-list" id="projects">
+            <h3>My First Project is Creating a IT Company Website. I Gave A Company Name "InnoVista". I Have Created 3
+                Website Using html,css,bootrap & Javascript.. </h3>
+
+            <br>
+
+            <hr>
+
+            <br>
+
+            <h3>My Second Project Is Creating A Game. I Created 2 Games Which is Ping Pong Game For PC & Endless Run
+                Game For Mobile.</h3>
+
+            <br>
+
+            <hr>
+
+            <br>
+
+        </div>
+
+    </section>
+
+    <script>
+
+        let menu_icon_box = document.querySelector(".nav-bar");
+        let box = document.querySelector(".nav-bar");
+
+
+        menu_icon_box.onclick = function () {
+            menu_icon_box.classList.toggle("active");
+            box.classList.toggle("active_box");
+        }
+
+    </script>
+
+</body>
+
+<script>
+    hamburgar = document.querySelector(".hamburgar");
+    hamburgar.onclick = function () {
+        navBar = document.querySelector(".nav-bar");
+        navBar.classList.toggle("active");
+    }
+</script>
+
+</html>
