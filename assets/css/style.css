@@ -10,11 +10,18 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     background: #000000;
+}
+
+.linkedin-img {
+    position: relative;
+    left: 75px;
+    top: -56px;
 }
 
 header {
