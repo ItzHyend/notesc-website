@@ -1,14 +1,30 @@
-hamburgar = document.querySelector(".hamburgar");
-hamburgar.onclick = function () {
-    navBar = document.querySelector(".nav-bar");
-    navBar.classList.toggle("active");
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = themeToggle.querySelector("i");
+
+// Check saved theme
+if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light");
+    themeIcon.classList.replace("fa-moon", "fa-sun");
+} else {
+    document.body.classList.remove("light");
+    themeIcon.classList.replace("fa-sun", "fa-moon");
 }
 
-let menu_icon_box = document.querySelector(".nav-bar");
-let box = document.querySelector(".nav-bar");
+// Toggle Theme
+themeToggle.addEventListener("click", () => {
 
+    document.body.classList.toggle("light");
 
-menu_icon_box.onclick = function () {
-    menu_icon_box.classList.toggle("active");
-    box.classList.toggle("active_box");
-}
+    if (document.body.classList.contains("light")) {
+
+        themeIcon.classList.replace("fa-moon", "fa-sun");
+        localStorage.setItem("theme", "light");
+
+    } else {
+
+        themeIcon.classList.replace("fa-sun", "fa-moon");
+        localStorage.setItem("theme", "dark");
+
+    }
+
+});
