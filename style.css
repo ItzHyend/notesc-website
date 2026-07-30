@@ -517,6 +517,22 @@ body.light .footer-bottom p {
     color: #F0DB4F;
 }
 
+/* About Description */
+.aboutText-socials>p {
+    max-width: 650px;
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: #d1d5db;
+    transition: color 0.3s ease;
+}
+
+/* Light Theme */
+body.light .aboutText-socials>p {
+    color: #4b5563;
+}
+
 /* SOICAL LINKS */
 
 /* Container */
