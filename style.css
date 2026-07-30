@@ -93,24 +93,6 @@ body.light #progress {
     transition: .3s ease;
 }
 
-/* DARK */
-
-body.dark .icon,
-body.dark .nav a,
-body.dark .nav i,
-body.dark .social-links p {
-    color: #fff;
-}
-
-/* LIGHT */
-
-body.light .icon,
-body.light .nav a,
-body.light .nav i,
-body.light .social-links p {
-    color: #111;
-}
-
 /* ===========================
    LIGHT THEME NAVBAR
 =========================== */
@@ -537,57 +519,143 @@ body.light .footer-bottom p {
 
 /* SOICAL LINKS */
 
+/* Container */
 .social-links {
     display: flex;
-    gap: 38px;
-}
-
-.icon {
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 18px;
+}
+
+/* Main Button */
+.social-links .icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50px;
+    overflow: hidden;
+
     text-decoration: none;
-    font-size: 34px;
+    color: #fff;
+
+    background: rgba(255, 255, 255, .05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    transition: .45s ease;
 }
 
-.social-links p {
-    margin-top: 8px;
-    font-size: 18px;
+/* Icon */
+.social-links .icon i {
+    font-size: 1.35rem;
+    transition: .35s ease;
+    z-index: 2;
 }
 
-/* HOVER ANIMATION */
+/* Text */
+.social-links .icon p {
+    position: absolute;
+    left: 60px;
 
-.icon:hover {
-    transform: translateY(-8px) scale(1.12);
+    font-size: .95rem;
+    font-weight: 500;
+    letter-spacing: .4px;
+
+    opacity: 0;
+    transform: translateX(15px);
+
+    transition: .35s ease;
+    white-space: nowrap;
 }
 
-/* HOVER COLORS */
+/* Hover */
+.social-links .icon:hover {
+    width: 170px;
+    justify-content: flex-start;
+    padding-left: 20px;
 
-body.dark .github:hover,
-body.light .github:hover {
-    color: #c0bdbd;
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, .12),
+        inset 0 0 20px rgba(255, 255, 255, .04);
 }
 
-body.dark .linkedin:hover,
+.social-links .icon:hover p {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.social-links .icon:hover i {
+    transform: rotate(-10deg) scale(1.15);
+}
+
+.social-links .resume:hover i {
+    transform: rotate(-20deg) scale(1.15);
+}
+
+/* Individual Colors */
+.linkedin:hover {
+    background: linear-gradient(135deg, #0A66C2, #2D8CFF);
+}
+
+.email:hover {
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+}
+
+.resume:hover {
+    background: linear-gradient(135deg, #7b61ff, #a855f7);
+}
+
+/* Light Theme */
+body.light .social-links .icon {
+    /* background: #ffffff; */
+    color: #222;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Icon & Text */
+body.light .social-links .icon i,
+body.light .social-links .icon p {
+    color: #222;
+}
+
+/* Hover */
+body.light .social-links .icon:hover {
+    align-items: center;
+}
+
+body.light .social-links .icon:hover i,
+body.light .social-links .icon:hover p {
+    align-items: center;
+}
+
+/* Hover backgrounds */
 body.light .linkedin:hover {
-    color: #0A66C2;
-}
-
-body.dark .email:hover {
-    color: #EA4335;
+    background: linear-gradient(135deg, #0A66C2, #2D8CFF);
 }
 
 body.light .email:hover {
-    color: #EA4335;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
 }
 
-body.dark .resume:hover,
 body.light .resume:hover {
-    color: #00C853;
+    background: linear-gradient(135deg, #7b61ff, #a855f7);
 }
 
-.skills-section {
-    padding: 20px;
+/* Make icon & text white on colored backgrounds */
+body.light .linkedin:hover i,
+body.light .linkedin:hover p,
+body.light .email:hover i,
+body.light .email:hover p,
+body.light .resume:hover i,
+body.light .resume:hover p {
+    color: #fff;
 }
 
 /* SKILLS  */
@@ -599,6 +667,10 @@ body.light .resume:hover {
     padding: 25px;
     border-radius: 12px;
     color: #fff;
+}
+
+.skills-section {
+    padding: 20px;
 }
 
 .function-keyword {
@@ -1355,17 +1427,84 @@ body.light .resume:hover {
 
     .social-links {
         display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 18px;
-        flex-wrap: wrap;
     }
 
-    .icon {
-        font-size: 26px;
+    .social-links .icon {
+        width: 55px;
+        height: 55px;
+        padding: 0;
+        overflow: visible;
+        /* Allow the text to show below */
     }
 
-    .social-links p {
-        font-size: 13px;
-        margin-top: 5px;
+    /* Disable horizontal expansion */
+    .social-links .icon:hover {
+        width: 55px;
+        box-shadow:
+            0 0 15px rgba(255, 255, 255, .15),
+            inset 0 0 15px rgba(255, 255, 255, .05);
+    }
+
+    .social-links .icon i {
+        font-size: 1.3rem;
+    }
+
+    /* Pop-down label */
+    .social-links .icon p {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%) translateY(-8px);
+
+        opacity: 0;
+
+        background: #fff;
+        color: #000;
+
+        padding: 6px 12px;
+        border-radius: 10px;
+
+        font-size: .8rem;
+        white-space: nowrap;
+
+        transition: .3s ease;
+
+        pointer-events: none;
+    }
+
+    .social-links .icon:hover p {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .social-links .icon i {
+        font-size: 1.3rem;
+        transition: transform .25s ease;
+    }
+
+    /* Tooltip */
+    .social-links .icon p {
+        background: #fff;
+        color: #000 !important;
+    }
+
+    /* Keep it black on hover */
+    .social-links .icon:hover p,
+    .social-links .icon:focus p,
+    .social-links .icon:active p,
+    .social-links .icon:focus-visible p {
+        color: #000 !important;
+        background: #fff;
+    }
+
+    /* Light Theme */
+    body.light .social-links .icon p {
+        background: #fff;
+        color: #000;
+        box-shadow: 0 6px 15px rgba(254, 252, 252, 0.15);
     }
 
     .skills-section {
@@ -1412,7 +1551,6 @@ body.light .resume:hover {
     .code-box,
     .experience-box {
         width: 100%;
-        /* height: 100%; */
     }
 
     .projects {
