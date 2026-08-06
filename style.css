@@ -814,23 +814,30 @@ body.light .resume:hover p {
 .skills-experience-container {
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     gap: 20px;
     width: 100%;
     max-width: 1420px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+
+    grid-template-columns: 1fr;
     scroll-margin-top: 200px;
-    padding: 0 20px;
 }
 
 .skills-section,
 .experience-section {
-    flex: 1;
+    flex: 1 1 500px;
+
+    display: flex;
+    justify-content: center;
 }
 
 .code-box,
 .experience-box {
     width: 100%;
-    height: 100%;
+    max-width: 600px;
 }
 
 /* PROJECTS */
@@ -839,16 +846,12 @@ body.light .resume:hover p {
 
     width: 90%;
     max-width: 1000px;
-
     margin: 70px auto;
     margin-top: 300px;
-    scroll-margin-top: 100px;
+    scroll-margin-top: 150px;
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-
     gap: 35px;
-
 }
 
 .project-footer {
@@ -1313,24 +1316,20 @@ body.light .resume:hover p {
 
     .skills-experience-container {
         flex-direction: column;
-        gap: 30px;
+        align-items: center;
         scroll-margin-top: 100px;
     }
 
     .skills-section,
     .experience-section {
         width: 100%;
-    }
-
-    .code-box,
-    .experience-box {
-        width: 100%;
+        max-width: 600px;
     }
 
     .projects {
         grid-template-columns: 1fr;
         margin-top: 300px;
-        scroll-margin-top: 100px;
+        scroll-margin-top: 150px;
     }
 
     .footer-content {
@@ -1561,12 +1560,30 @@ body.light .resume:hover p {
     }
 
     .skills-experience-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        gap: 20px;
+        padding: 20px;
+        margin: 0 auto;
         scroll-margin-top: 150px;
+    }
+
+    .skills-section,
+    .experience-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .code-box,
     .experience-box {
         width: 100%;
+        max-width: 380px;
     }
 
     .projects {
